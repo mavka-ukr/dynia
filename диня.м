@@ -1,26 +1,26 @@
 взяти "дід"
 
 js """
-var $__диня__записати_у_файл__;
-var $__диня__читати_з_файлу__;
-var $__диня__видалити_файл__;
-var $__диня__перевірити_чи_файл_існує__;
-var $__диня__прочитати_всі_файли__;
-var $__диня__видалити_папку__;
-var $__диня__створити_папку__;
+var м___диня__записати_у_файл__;
+var м___диня__читати_з_файлу__;
+var м___диня__видалити_файл__;
+var м___диня__перевірити_чи_файл_існує__;
+var м___диня__прочитати_всі_файли__;
+var м___диня__видалити_папку__;
+var м___диня__створити_папку__;
 
 await ((async function() {
   var { default: fs } = await import('fs');
 
-  $__диня__записати_у_файл__ = mavka_diia(
+  м___диня__записати_у_файл__ = mavka_diia(
     '__диня__записати_у_файл__',
     {
-      'шлях': mavka_param(0, 'шлях', $текст, undefined),
-      'значення': mavka_param(1, 'значення', $текст, undefined)
+      'шлях': mavka_param(0, 'шлях', м_текст, undefined),
+      'значення': mavka_param(1, 'значення', м_текст, undefined)
     },
     function(args, di) {
-      var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
-      var value = mavka_arg(args, 1, 'значення', $текст, undefined, di);
+      var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
+      var value = mavka_arg(args, 1, 'значення', м_текст, undefined, di);
       var pathParts = path.split('/');
       var folderPath = pathParts.slice(0, pathParts.length - 1).join('/');
       if (!fs.existsSync(folderPath)) {
@@ -31,47 +31,47 @@ await ((async function() {
     }
   );
 
-  $__диня__читати_з_файлу__ = mavka_diia(
+  м___диня__читати_з_файлу__ = mavka_diia(
     '__диня__читати_з_файлу__',
     {
-      'шлях': mavka_param(0, 'шлях', $текст, undefined)
+      'шлях': mavka_param(0, 'шлях', м_текст, undefined)
     },
     function(args, di) {
-      var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+      var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
       return fs.readFileSync(path, 'utf8');
     }
   );
 
-  $__диня__видалити_файл__ = mavka_diia(
+  м___диня__видалити_файл__ = mavka_diia(
     '__диня__видалити_файл__',
     {
-      'шлях': mavka_param(0, 'шлях', $текст, undefined)
+      'шлях': mavka_param(0, 'шлях', м_текст, undefined)
     },
     function(args, di) {
-      var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+      var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
       fs.unlinkSync(path);
       return null;
     }
   );
 
-  $__диня__перевірити_чи_файл_існує__ = mavka_diia(
+  м___диня__перевірити_чи_файл_існує__ = mavka_diia(
     '__диня__перевірити_чи_файл_існує__',
     {
-      'шлях': mavka_param(0, 'шлях', $текст, undefined)
+      'шлях': mavka_param(0, 'шлях', м_текст, undefined)
     },
     function(args, di) {
-      var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+      var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
       return fs.existsSync(path);
     }
   );
 
-  $__диня__прочитати_всі_файли__ = mavka_diia(
+  м___диня__прочитати_всі_файли__ = mavka_diia(
     '__диня__прочитати_всі_файли__',
     {
-      'шлях': mavka_param(0, 'шлях', $текст, undefined)
+      'шлях': mavka_param(0, 'шлях', м_текст, undefined)
     },
     function(args, di) {
-      var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+      var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
       var files = fs.readdirSync(path);
       var result = [];
       for (var i = 0; i < files.length; i++) {
@@ -84,13 +84,13 @@ await ((async function() {
     }
   );
 
-    $__диня__видалити_папку__ = mavka_diia(
+    м___диня__видалити_папку__ = mavka_diia(
       '__диня__видалити_папку__',
       {
-        'шлях': mavka_param(0, 'шлях', $текст, undefined)
+        'шлях': mavka_param(0, 'шлях', м_текст, undefined)
       },
       function(args, di) {
-        var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+        var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
         if (fs.existsSync(path)) {
           fs.rmdirSync(path, { recursive: true });
         }
@@ -98,13 +98,13 @@ await ((async function() {
       }
     );
 
-    $__диня__створити_папку__ = mavka_diia(
+    м___диня__створити_папку__ = mavka_diia(
       '__диня__створити_папку__',
       {
-        'шлях': mavka_param(0, 'шлях', $текст, undefined)
+        'шлях': mavka_param(0, 'шлях', м_текст, undefined)
       },
       function(args, di) {
-        var path = mavka_arg(args, 0, 'шлях', $текст, undefined, di);
+        var path = mavka_arg(args, 0, 'шлях', м_текст, undefined, di);
         fs.mkdirSync(path, { recursive: true });
         return null;
       }
